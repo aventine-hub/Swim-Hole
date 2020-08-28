@@ -2,6 +2,9 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var methodOverride = require('method-override');
 
 // load the env vars
@@ -12,6 +15,7 @@ var app = express();
 
 // connect to the MongoDB with mongoose
 require('./config/database');
+require('./config/passport');
 
 
 // require our routes
@@ -28,7 +32,17 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
+app.use(session({
+  secret: 'SEIRocks!',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
