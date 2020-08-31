@@ -1,0 +1,44 @@
+<%- include('../partials/header') %>
+<div id="map"></div>
+<script>
+    function initMap() {
+        let locationForMap = '<%- JSON.stringify(locationForMap) %>'
+        let parsedLocation = JSON.parse(locationForMap)
+        var starterLocation = { lat: parseFloat(parsedLocation.lat.$numberDecimal), lng: parseFloat(parsedLocation.long.$numberDecimal) };
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 16,
+            center: starterLocation,
+        });
+        makeMarker(parsedLocation)
+        function makeMarker(location) {
+            let myLat = parseFloat(location.lat.$numberDecimal)
+            let myLong = parseFloat(location.long.$numberDecimal)
+            var marker = new google.maps.Marker({
+                map: map,
+                position: { lat: myLat, lng: myLong }
+            });
+            const infowindow = new google.maps.InfoWindow({
+                content: `
+                        <h3><strong>${location.name}</strong></h3>
+                        <br>
+                        <a href='/locations/${location._id}'>Show Page</a>
+                    `
+            });
+            marker.addListener("click", () => {
+                infowindow.open(marker.get("map"), marker);
+            });
+        }
+    }
+</script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=<%=process.env.GOOGLE_API_KEY%>&callback=initMap">
+</script>
+<br>
+<div class="holes">
+    <ul>
+        <% locations.forEach(location => { %>
+        <li>Name: <%= location.name %> | Lat: <%= location.lat %> | Long: <%= location.long %> | <a
+                href="/locations/<%= location._id %>/on-map">See On Map</a></li>
+        <% }) %>
+    </ul>
+</div>
+<%- include('../partials/footer') %>

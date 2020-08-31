@@ -5,20 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
     <title>Swim Hole</title>
 </head>
 
 <body>
 
     <nav>
+        <h1>Swim Hole</h1>
         <a href="/">Home</a>
-        &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp;
         <% if (user) { %>
         <a href="/logout">Log Out</a>
         <% } else { %>
         <a href="/auth/google">Login with Googs</a>
         <% } %>
+        <% if (user) { %>
+        <a href="/locations/new">Add A Hole</a>
+        <% } else { %>
+        <div></div>
+        <% } %>
 
     </nav>
-    <main>
-        <h1>Swim Hole</h1>

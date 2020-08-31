@@ -1,8 +1,59 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: none;
+  font-family: 'Londrina Solid', cursive;
+  background-image: url(https://i.imgur.com/lDCK1Us.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
 }
 
 a {
   color: #00B7FF;
+}
+
+#map {
+  height: 60vh;
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  justify-items: center;
+  border-radius: 1vh;
+}
+
+.holes {
+  color: antiquewhite;
+}
+
+body > nav {
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  background-image: url(https://i.imgur.com/GvURjE2.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  margin-bottom: 3vh;
+  border-radius: 1vh;
+}
+
+nav > h1 {
+  padding: 10px;
+  font-size: 4vh;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav > a:hover {
+  color: white;
+  background-color: #012996;
+}
+
+nav > a.active {
+  color: white;
 }
