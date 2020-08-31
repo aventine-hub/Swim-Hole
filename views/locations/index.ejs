@@ -38,14 +38,22 @@
 <div class="holes">
     <ul>
         <% locations.forEach(location => { %>
-        <li>
-            Name: <%= location.name %> | Lat: <%= location.lat %> | Long: <%= location.long %> | <a
-                href="/locations/<%= location._id %>/on-map">See On Map</a> | <form
-                action="/locations/<%= location.id %>?_method=DELETE" class="delete-form" method="POST">
-                <button type="submit">X</button>
-            </form>
-        </li>
+        <table>
+            <tr>
+                <td><%= location.name %> |</td>
+                <td>Lat: <%= location.lat %> |</td>
+                <td>Long: <%= location.long %> |</td>
+                <td><a href="/locations/<%= location._id %>/on-map">See On Map</a> |</td>
+                <td>
+                    <form action="/locations/<%= location.id %>?_method=DELETE" class="delete-form" method="POST">
+                        <button type="submit">X</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
         <% }) %>
     </ul>
+
+
 </div>
 <%- include('../partials/footer') %>
