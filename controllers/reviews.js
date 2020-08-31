@@ -2,6 +2,7 @@ const Location = require('../models/location');
 
 module.exports = {
     create,
+    // delete: delReview,
 };
 
 function create(req, res) {
@@ -12,3 +13,12 @@ function create(req, res) {
         });
     });
 }
+
+// function delReview(req, res, next) {
+//     Location.findOne({ 'reviews._id': req.params.id }, function (err, location) {
+//         location.reviews.id(req.params.id).remove();
+//         location.save(function (err) {
+//             res.redirect(`/locations/${location._id}`);
+//         });
+//     });
+// }

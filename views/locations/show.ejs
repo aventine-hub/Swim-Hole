@@ -13,6 +13,7 @@
             <tr>
                 <th>Date</th>
                 <th>Review</th>
+                <!-- <th>Remove?</th> -->
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,11 @@
             <tr>
                 <td><%= r.createdAt.toLocaleDateString() %></td>
                 <td><%= r.content %></td>
+                <!-- <td>
+                    <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn-small red-text">X</button>
+                    </form>
+                </td> -->
             </tr>
             <% }); %>
         </tbody>

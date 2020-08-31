@@ -19,6 +19,7 @@ a {
   display: flex;
   justify-items: center;
   border-radius: 1vh;
+  
 }
 
 .holes {
@@ -35,6 +36,9 @@ body > nav {
   background-attachment: fixed;
   margin-bottom: 3vh;
   border-radius: 1vh;
+  border: 3px solid black;
+  color: #00B7FF;
+  text-shadow: 0 0 2px black;
 }
 
 nav > h1 {
@@ -50,10 +54,10 @@ nav > a {
 }
 
 nav > a:hover {
-  color: white;
-  background-color: #012996;
+  color: antiquewhite;
+  background-color: #00B7FF;
 }
 
 nav > a.active {
-  color: white;
+  color: antiquewhite;
 }
