@@ -24,6 +24,7 @@ function newLocation(req, res) {
 
 function create(req, res) {
     let location = new Location(req.body);
+    location.userId = req.user._id;
     location.save(function (err) {
         if (err) {
             return res.render("locations/new");

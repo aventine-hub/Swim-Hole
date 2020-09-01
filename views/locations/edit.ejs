@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<form action="/locations/<%= location._id %>?_method=PUT" method="POST">
+<form class="holes" action="/locations/<%= location._id %>?_method=PUT" method="POST">
     <label for="name">Edit Name:
         <input type="string" name="name" value="<%= location.name %>">
     </label>

@@ -22,6 +22,10 @@ const locationSchema = new Schema({
         type: Schema.Types.Decimal128,
     },
     reviews: [reviewSchema],
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
 }, {
     timestamps: true
 });
