@@ -1,7 +1,7 @@
 body {
   padding: none;
   font-family: 'Londrina Solid', cursive;
-  background-image: url(https://i.imgur.com/lDCK1Us.png);
+  background-image: url(https://i.imgur.com/j5B5cHB.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -30,7 +30,7 @@ body > nav {
   grid-area: nav;
   display: flex;
   align-items: center;
-  background-image: url(https://i.imgur.com/GvURjE2.png);
+  background-image: url(https://i.imgur.com/Ey6KGjN.png);
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
@@ -63,10 +63,7 @@ nav > a.active {
 }
 
 
-@media only screen and (max-width: 800px) {
-  body > nav{
-    background-image: url(https://i.imgur.com/Ey6KGjN.png);
-  }
+@media only screen and (max-width: 600px) {
   nav > h1 {
     padding: 2px;
     font-size: 3vh;

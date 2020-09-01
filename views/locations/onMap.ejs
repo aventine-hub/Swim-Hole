@@ -8,6 +8,7 @@
         var map = new google.maps.Map(document.getElementById("map"), {
             zoom: 16,
             center: starterLocation,
+            mapId: 'dddc211cd1eb30bc'
         });
         makeMarker(parsedLocation)
         function makeMarker(location) {
@@ -30,8 +31,9 @@
         }
     }
 </script>
-<script defer src="https://maps.googleapis.com/maps/api/js?key=<%=process.env.GOOGLE_API_KEY%>&callback=initMap">
-</script>
+<script defer
+    src="https://maps.googleapis.com/maps/api/js?key=<%=process.env.GOOGLE_API_KEY%>&v=weekly&callback=initMap&map_ids=dddc211cd1eb30bc">
+    </script>
 <br>
 <div class="holes">
     <% locations.forEach(location => { %>

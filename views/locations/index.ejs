@@ -6,6 +6,7 @@
         var map = new google.maps.Map(document.getElementById("map"), {
             zoom: 11,
             center: austin,
+            mapId: 'dddc211cd1eb30bc'
         });
         var myLocations = '<%- JSON.stringify(locations) %>'
 
@@ -32,23 +33,27 @@
         }
     }
 </script>
-<script defer src="https://maps.googleapis.com/maps/api/js?key=<%=process.env.GOOGLE_API_KEY%>&callback=initMap">
-</script>
+<script defer
+    src="https://maps.googleapis.com/maps/api/js?key=<%=process.env.GOOGLE_API_KEY%>&v=weekly&callback=initMap&map_ids=dddc211cd1eb30bc">
+    </script>
 <br>
 <div class="holes">
-
-    <% locations.forEach(location => { %>
     <table>
         <tr>
+            <td>Name: </td>
+            <td>Lat:</td>
+            <td>Long:</td>
+            <td> </td>
+        </tr>
+        <% locations.forEach(location => { %>
+
+        <tr>
             <td><%= location.name %> |</td>
-            <td>Lat: <%= location.lat %> |</td>
-            <td>Long: <%= location.long %> |</td>
-            <td><a href="/locations/<%= location._id %>/on-map">See On Map</a> |</td>
+            <td> <%= location.lat %> |</td>
+            <td> <%= location.long %> |</td>
+            <td><a href="/locations/<%= location._id %>/on-map">See On Map</a> </td>
         </tr>
     </table>
     <% }) %>
-
-
-
 </div>
 <%- include('../partials/footer') %>
