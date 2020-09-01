@@ -73,4 +73,7 @@ nav > div > a:hover {
     padding: 2px;
     font-size: 3vh;
   }
+  table {
+    font-size: small;
+  }
 }
