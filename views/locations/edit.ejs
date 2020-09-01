@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+<form action="/locations/<%= location._id %>?_method=PUT" method="POST">
+    <label for="name">Edit Name:
+        <input type="string" name="name" value="<%= location.name %>">
+    </label>
+    <label for="lat">Edit Latitude:
+        <input type="number" name="lat" value="<%= location.lat %>">
+    </label>
+    <label for="long">Edit Longitude:
+        <input type="number" name="long" value="<%= location.long %>">
+    </label>
+    <button class="submit-button" type="submit">Accept Changes</button>
+
+</form>
+<%- include('../partials/footer') %>

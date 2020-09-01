@@ -6,7 +6,9 @@ module.exports = {
     create,
     show,
     delete: deleteLocation,
-    showOnMap
+    showOnMap,
+    edit,
+    update
 }
 
 function index(req, res) {
@@ -51,5 +53,23 @@ function showOnMap(req, res) {
         Location.findById(req.params.id, function (err, locationForMap) {
             res.render("locations/onMap", { locations, locationForMap });
         });
+    })
+}
+
+function edit(req, res) {
+    Location.findById(req.params.id, function (err, location) {
+        if (err) {
+            res.redirect(`/locations`)
+        }
+        res.render('locations/edit', { location, title: 'Edit Location' })
+    })
+}
+
+function update(req, res) {
+    Location.findByIdAndUpdate(req.params.id, req.body, function (err, location) {
+        if (err) {
+            res.render('locations/edit', { location, title: 'Edit Location' })
+        }
+        res.redirect(`/locations`)
     })
 }

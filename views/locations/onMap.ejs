@@ -2,8 +2,8 @@
 <div id="map"></div>
 <script>
     function initMap() {
-        let locationForMap = '<%- JSON.stringify(locationForMap) %>'
-        let parsedLocation = JSON.parse(locationForMap)
+        var locationForMap = '<%- JSON.stringify(locationForMap) %>'
+        var parsedLocation = JSON.parse(locationForMap)
         var starterLocation = { lat: parseFloat(parsedLocation.lat.$numberDecimal), lng: parseFloat(parsedLocation.long.$numberDecimal) };
         var map = new google.maps.Map(document.getElementById("map"), {
             zoom: 16,
@@ -11,8 +11,8 @@
         });
         makeMarker(parsedLocation)
         function makeMarker(location) {
-            let myLat = parseFloat(location.lat.$numberDecimal)
-            let myLong = parseFloat(location.long.$numberDecimal)
+            var myLat = parseFloat(location.lat.$numberDecimal)
+            var myLong = parseFloat(location.long.$numberDecimal)
             var marker = new google.maps.Marker({
                 map: map,
                 position: { lat: myLat, lng: myLong }

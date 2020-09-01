@@ -7,14 +7,14 @@
             zoom: 11,
             center: austin,
         });
-        let myLocations = '<%- JSON.stringify(locations) %>'
+        var myLocations = '<%- JSON.stringify(locations) %>'
 
         JSON.parse(myLocations).forEach((location) => {
             makeMarker(location)
         })
         function makeMarker(location) {
-            let myLat = parseFloat(location.lat.$numberDecimal)
-            let myLong = parseFloat(location.long.$numberDecimal)
+            var myLat = parseFloat(location.lat.$numberDecimal)
+            var myLong = parseFloat(location.long.$numberDecimal)
             var marker = new google.maps.Marker({
                 map: map,
                 position: { lat: myLat, lng: myLong }
@@ -23,7 +23,7 @@
                 content: `
                         <h3><strong>${location.name}</strong></h3>
                         <br>
-                        <a href='/locations/${location._id}'>Show Page</a>
+                        <a href='/locations/${location._id}'>Show Hole</a>
                     `
             });
             marker.addListener("click", () => {
@@ -49,6 +49,7 @@
                     <button type="submit">X</button>
                 </form>
             </td>
+            <td><a href="/locations/<%=location._id%>/edit">Edit</a></td>
         </tr>
     </table>
     <% }) %>

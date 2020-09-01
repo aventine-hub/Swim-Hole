@@ -9,6 +9,8 @@ router.get("/:id", locationsController.show);
 router.get("/:id/on-map", locationsController.showOnMap)
 router.post("/", isLoggedIn, locationsController.create);
 router.delete("/:id", isLoggedIn, locationsController.delete);
+router.get('/:id/edit', isLoggedIn, locationsController.edit);
+router.put('/:id', isLoggedIn, locationsController.update);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
