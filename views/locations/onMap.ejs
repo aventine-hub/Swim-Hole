@@ -36,13 +36,20 @@
     </script>
 <br>
 <div class="holes">
-    <% locations.forEach(location => { %>
     <table>
+        <tr>Swimming Hole Locations:</tr>
+        <tr>
+            <td>Name: </td>
+            <td>Latitude:</td>
+            <td>Longitude:</td>
+            <td> </td>
+        </tr>
+        <% locations.forEach(location => { %>
         <tr>
             <td><%= location.name %> |</td>
-            <td>Lat: <%= location.lat %> |</td>
-            <td>Long: <%= location.long %> |</td>
-            <td><a href="/locations/<%= location._id %>/on-map">See On Map</a> |</td>
+            <td> <%= location.lat %> |</td>
+            <td> <%= location.long %> |</td>
+            <td><a href="/locations/<%= location._id %>/on-map">See On Map</a> </td>
         </tr>
     </table>
     <% }) %>
