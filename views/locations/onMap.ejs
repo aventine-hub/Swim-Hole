@@ -22,7 +22,7 @@
                 content: `
                         <h3><strong>${location.name}</strong></h3>
                         <br>
-                        <a href='/locations/${location._id}'>Show Page</a>
+                        <a href='/locations/${location._id}'>Reviews</a>
                     `
             });
             marker.addListener("click", () => {
@@ -46,7 +46,7 @@
         </tr>
         <% locations.forEach(location => { %>
         <tr>
-            <td><%= location.name %> |</td>
+            <td><a href="/locations/<%= location._id %>"> <%= location.name %> </a> |</td>
             <td> <%= location.lat %> |</td>
             <td> <%= location.long %> |</td>
             <td><a href="/locations/<%= location._id %>/on-map">See On Map</a> </td>
