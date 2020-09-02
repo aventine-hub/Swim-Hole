@@ -16,7 +16,7 @@
 
 ## Technologies Used
 
-This app was developed using JavaScript, HTML, CSS, NodeJS, Express, MongoDB, and Mongoose.
+This app was developed using JavaScript, HTML, CSS, NodeJS, Express, MongoDB, Mongoose, and the Google Maps API.
 
 ## Getting Started
 
