@@ -1,7 +1,7 @@
 body {
   padding: none;
   font-family: 'Londrina Solid', cursive;
-  background-image: url(https://i.imgur.com/j5B5cHB.png);
+  background-image: url(https://i.imgur.com/mZIAMMn.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -24,6 +24,7 @@ a {
 
 .holes {
   color: antiquewhite;
+  text-shadow: 0 0 2px black;
 }
 
 body > nav {

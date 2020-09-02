@@ -11,14 +11,20 @@
     <table>
         <thead>
             <tr>
+                <th> </th>
+                <th> </th>
                 <th>Date</th>
+                <th></th>
                 <th>Review</th>
             </tr>
         </thead>
         <tbody>
             <% location.reviews.forEach(function(r) { %>
             <tr>
+                <td><%= r.userName %></td>
+                <td> </td>
                 <td><%= r.createdAt.toLocaleDateString() %></td>
+                <td> </td>
                 <td><%= r.content %></td>
             </tr>
             <% }); %>
