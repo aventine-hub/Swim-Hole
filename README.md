@@ -8,9 +8,9 @@
 
 **SWIM HOLE** is an app designed to help users find and keep track of their favorite off-the-grid swimming spots. Users can create new swimming locations based off their coordinates and leave reviews and information about them for others.
 
-<img src="https://i.imgur.com/U8UCgUJ.png"/>
+<img src="https://i.imgur.com/WLuaBrk.png"/>
 
-<img src="https://i.imgur.com/QgHOMoz.png"/>
+<img src="https://i.imgur.com/yAbPhto.png"/>
 
 ---
 
