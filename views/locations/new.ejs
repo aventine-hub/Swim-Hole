@@ -2,13 +2,14 @@
 
 
 <div class="flex">
-    <div class="holes">
-        <h1>Add A New Swimming Hole</h1>
-        <form action="/locations" method="POST">
-            <label for="name">Location Name: </label>
+    <div>
+        <h1 class="holes">Add A New Swimming Hole</h1>
+
+        <form action="/locations" method="POST" class="bigholes">
+            <label for="name">Location Name:&nbsp;</label>
             <input type="text" name="name">
             <br>
-            <label for="lat">Latitude: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
+            <label for="lat">Latitude:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
             <input type="number" step="any" name="lat">
             <br>
             <label for="long">Longitude: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
