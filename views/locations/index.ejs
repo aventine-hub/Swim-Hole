@@ -36,11 +36,10 @@
 <script defer
     src="https://maps.googleapis.com/maps/api/js?key=<%=process.env.GOOGLE_API_KEY%>&v=weekly&callback=initMap&map_ids=dddc211cd1eb30bc">
     </script>
+
 <br>
-
-
 <table class="bigholes">
-    <tr>Swimming Hole Locations:</tr>
+    <tr><span id="light">Swimming Hole Locations:</span></tr>
     <tr>
         <td>Name: </td>
         <td>Latitude:</td>
@@ -48,7 +47,6 @@
         <td> </td>
     </tr>
     <% locations.forEach(location => { %>
-
     <tr>
         <td><a href="/locations/<%= location._id %>"> <%= location.name %> </a> |</td>
         <td> <%= location.lat %> |</td>
