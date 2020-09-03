@@ -74,3 +74,4 @@ function update(req, res) {
         res.redirect(`/locations`)
     })
 }
+
