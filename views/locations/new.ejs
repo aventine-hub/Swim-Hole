@@ -1,22 +1,23 @@
 <%- include('../partials/header') %>
 
 
-
-<div class="holes">
-    <h1>Add A New Hole</h1>
-    <form action="/locations" method="POST">
-        <label for="name">Location Name: </label>
-        <input type="text" name="name">
-        <br>
-        <label for="lat">Latitude: </label>
-        <input type="number" step="any" name="lat">
-        <br>
-        <label for="long">Longitude: </label>
-        <input type="number" step="any" name="long">
-        <br>
-        <input type="submit" value="Add Location">
-    </form>
+<div class="flex">
+    <div class="holes">
+        <h1>Add A New Swimming Hole</h1>
+        <form action="/locations" method="POST">
+            <label for="name">Location Name: </label>
+            <input type="text" name="name">
+            <br>
+            <label for="lat">Latitude: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
+            <input type="number" step="any" name="lat">
+            <br>
+            <label for="long">Longitude: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+            <input type="number" step="any" name="long">
+            <br>
+            <br>
+            <input type="submit" value="Add Location">
+        </form>
+    </div>
 </div>
-
 
 <%- include('../partials/footer') %>

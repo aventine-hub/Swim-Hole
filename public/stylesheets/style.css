@@ -5,6 +5,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+
   
 }
 
@@ -24,7 +25,6 @@ a {
 
 .bigholes {
   color: black;
-  /* text-shadow: 0 0 2px black; */
   margin-bottom: 3vh;
   border-radius: 1vh;
   border: 2px solid black;
@@ -32,10 +32,16 @@ a {
   padding: 5px;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
 .holes {
   color:antiquewhite;
   text-shadow: 0 0 2px black;
   padding: 5px;
+  
 }
 
 td > a {

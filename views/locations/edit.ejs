@@ -1,15 +1,21 @@
 <%- include('../partials/header') %>
-<form class="holes" action="/locations/<%= location._id %>?_method=PUT" method="POST">
-    <label for="name">Edit Name:
-        <input type="string" name="name" value="<%= location.name %>">
-    </label>
-    <label for="lat">Edit Latitude:
-        <input type="number" name="lat" value="<%= location.lat %>">
-    </label>
-    <label for="long">Edit Longitude:
-        <input type="number" name="long" value="<%= location.long %>">
-    </label>
-    <button class="submit-button" type="submit">Accept Changes</button>
+<div class="flex">
+    <form class="holes" action="/locations/<%= location._id %>?_method=PUT" method="POST">
+        <label for="name">Edit Name: &nbsp; &nbsp; &nbsp; &nbsp;
+            <input type="string" name="name" value="<%= location.name %>">
+        </label>
+        <br>
+        <label for="lat">Edit Latitude: &nbsp;
+            <input type="number" name="lat" value="<%= location.lat %>">
+        </label>
+        <br>
+        <label for="long">Edit Longitude:
+            <input type="number" name="long" value="<%= location.long %>">
+        </label>
+        <br>
+        <br>
+        <button class="submit-button" type="submit">Accept Changes</button>
 
-</form>
+    </form>
+</div>
 <%- include('../partials/footer') %>

@@ -1,57 +1,58 @@
 <%- include('../partials/header') %>
+<div class="flex">
+    <div class="holes">
+        <h1><%= location.name %></h1>
 
-<div class="holes">
-    <h1><%= location.name %></h1>
+        <% if (location.reviews.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th> </th>
+                    <th>Date</th>
+                    <th></th>
+                    <th>Review</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% location.reviews.forEach(function(r) { %>
+                <tr>
+                    <td><%= r.userName %></td>
+                    <td> </td>
+                    <td><%= r.createdAt.toLocaleDateString() %></td>
+                    <td> </td>
+                    <td><%= r.content %></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        <% } else { %>
+        <h5>No Reviews Yet</h5>
+        <% } %>
+        <br>
+        <% if (user) { %>
+        <form id="add-review-form" method="POST" action="/locations/<%= location._id %>/reviews">
+            <label>How's the Hole?:</label>
+            <br>
+            <textarea name="content"></textarea>
+            <br>
+            <input type="submit" value="Add Review">
+        </form>
+        <% } else { %>
+        <div></div>
+        <% } %>
+        <br>
 
-    <% if (location.reviews.length) { %>
-    <table>
-        <thead>
-            <tr>
-                <th> </th>
-                <th> </th>
-                <th>Date</th>
-                <th></th>
-                <th>Review</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% location.reviews.forEach(function(r) { %>
-            <tr>
-                <td><%= r.userName %></td>
-                <td> </td>
-                <td><%= r.createdAt.toLocaleDateString() %></td>
-                <td> </td>
-                <td><%= r.content %></td>
-            </tr>
-            <% }); %>
-        </tbody>
-    </table>
-    <% } else { %>
-    <h5>No Reviews Yet</h5>
-    <% } %>
-    <br>
-    <% if (user) { %>
-    <form id="add-review-form" method="POST" action="/locations/<%= location._id %>/reviews">
-        <label>How's the Hole?:</label>
+        <% if (location.userId.equals(user._id)) { %>
+        <a href="/locations/<%=location._id%>/edit">Edit Hole</a>
         <br>
         <br>
-        <textarea name="content"></textarea>
-        <input type="submit" value="Add Review">
-    </form>
-    <% } else { %>
-    <div></div>
-    <% } %>
-    <br>
-
-    <% if (location.userId.equals(user._id)) { %>
-    <a href="/locations/<%=location._id%>/edit">Edit Hole</a>
-    <br>
-    <br>
-    <form action="/locations/<%= location.id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete Hole</button>
-    </form>
+        <form action="/locations/<%= location.id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete Hole</button>
+        </form>
 
 
-    <% } %>
+        <% } %>
+    </div>
 </div>
 <%- include('../partials/footer') %>
