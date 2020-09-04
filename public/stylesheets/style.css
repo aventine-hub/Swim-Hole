@@ -13,7 +13,7 @@ a {
 
 #map {
   height: 55vh;
-  width: 100%;
+  width: 80%;
   padding-top: 10px;
   display: flex;
   justify-items: center;
@@ -97,6 +97,9 @@ nav > div > a:hover {
     font-size: 3vh;
   }
   table {
-    font-size: 1.7vh;
+    font-size: 1.6vh;
+  }
+  #map {
+    width: 100%;
   }
 }

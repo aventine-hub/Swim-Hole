@@ -17,7 +17,6 @@ function index(req, res) {
     })
 }
 
-
 function newLocation(req, res) {
     res.render("locations/new")
 }

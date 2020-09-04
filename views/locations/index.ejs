@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
-<div id="map"></div>
+<div class="flex">
+    <div id="map"></div>
+</div>
 <script>
     function initMap() {
         var austin = { lat: 30.2892, lng: -97.7431 };
@@ -38,23 +40,28 @@
     </script>
 
 <br>
-<table class="bigholes">
-    <tr><span id="light">Swimming Hole Locations:</span></tr>
-    <tr>
-        <td>Name: </td>
-        <td>Latitude:</td>
-        <td>Longitude:</td>
-        <td> </td>
-    </tr>
-    <% locations.forEach(location => { %>
-    <tr>
-        <td><a href="/locations/<%= location._id %>"> <%= location.name %> </a> |</td>
-        <td> <%= location.lat %> |</td>
-        <td> <%= location.long %> |</td>
-        <td><a href="/locations/<%= location._id %>/on-map">See On Map</a> </td>
+<div class="flex">
+    <table class="bigholes">
 
-        <% }) %>
-    </tr>
-</table>
+        <tr>
+            <td><span id="light">Swimming Hole Locations:</span></td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td>Latitude:</td>
+            <td>Longitude:</td>
+            <td> </td>
+        </tr>
+        <% locations.forEach(location => { %>
+        <tr>
+            <td><a href="/locations/<%= location._id %>"> <%= location.name %> </a> |</td>
+            <td> <%= location.lat %> |</td>
+            <td> <%= location.long %> |</td>
+            <td><a href="/locations/<%= location._id %>/on-map">See On Map</a> </td>
+
+            <% }) %>
+        </tr>
+    </table>
+</div>
 
 <%- include('../partials/footer') %>
